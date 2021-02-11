@@ -28,6 +28,10 @@ It is assumed that `YaleB_32x32.npy` is present in the same directory as `test.p
 $ python3 test.py --yale-path path/to/YaleB_32x32.npy
 ```
 
+### Testing with GitHub Actions
+
+Tests can be run by GitHub Actions automatically every time you push your code.  To set this up, create a folder in your root directory called `.github/workflows`.  Copy the `example_github_actions.yml` file to that directory and rename it `ci.yml`.  Then open the file and edit the `NET_ID` environment variable on line 21
+
 ## Disclaimer
 
 These tests are not endorsed or created by anyone working in an official capacity with UW Madison or any staff for CS540. The tests are make by students, for students.
