@@ -15,10 +15,14 @@ on: [push]
 
 # Set these environment variables for the jobs.
 #    TEST_DIR: the directory of your test.py or other test files (use . for root directory)
-#    NET_ID: Your UW username 
+#    NET_ID: Your UW username
+#    HW_NUM: The number of the homework assignment
+#    ZIP_PATHS: Paths to the files that get zipped to turn in this assignment
 env:
   TEST_DIR: .
   NET_ID: CHANGEME
+  HW_NUM: 3
+  ZIP_PATHS: pca.py
 
 jobs:
   test:
@@ -60,13 +64,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      
-      # - name: set_artifact_name
-      #   run: echo "ARTIFACT_NAME=hw3_${NET_ID}" >> $GITHUB_ENV
-
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
-          name: hw3_${{ env.NET_ID }}
-          path: pca.py
+          name: hw${{ env.HW_NUM }}_${{ env.NET_ID }}
+          path: $ZIP_PATHS
           retention-days: 8
