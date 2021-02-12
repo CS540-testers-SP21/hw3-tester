@@ -39,6 +39,12 @@ $ cp example_github_actions.yml /path/to/CS540/hw3/.github/workflows/ci.yml
 Then open the file and edit the `NET_ID` environment variable on line 23.  With this setup, GitHub automatically runs the unit tests in `test.py` whenever you run `git push`.  You will get an email from GitHub if the unit tests fail.  
 This workflow will also generate the `hw<num>_<NETID>.zip` file you need to turn in.  It can be downloaded by going to the `Actions` tab of the main page of your GitHub repo, scrolling down to artifacts section, and clicking on the file.
 
+Lastly, you will need a `requirements.txt` file in your repo to tell the test script what modules to install from `pip`.  This repo contains a `requirements.txt` file with the modules used in the homework assignment.  Simply copy it to your project:
+
+```bash
+$ cp requirements.txt /path/to/CS540/hw3/
+```
+
 One thing to note is Actions is included in a GitHub Pro account.  This comes in the [GitHub Student Deveoloper Pack](https://education.github.com/pack) which is free for students and comes with like 300 hours of Actions run time per month or something like that.
 
 ## Disclaimer
